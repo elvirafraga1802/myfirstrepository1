@@ -46,6 +46,7 @@ namespace efragalaureano.dotnet.Services.CharacterService.WeaponService
 
             _context.Weapons.Add(weapon);
             await _context.SaveChangesAsync();
+            response.Data = _mapper.Map<GetCharacterDto>(character);
             }
 
            

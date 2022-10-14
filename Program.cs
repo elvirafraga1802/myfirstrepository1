@@ -2,6 +2,7 @@ global using efragalaureano.dotnet.Models;
 using efragalaureano.dotnet.Data;
 using efragalaureano.dotnet.Services.CharacterService;
 using efragalaureano.dotnet.Services.CharacterService.WeaponService;
+using efragalaureano.dotnet.Services.FightService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +42,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IWeaponService, WeaponService>();
+builder.Services.AddScoped<IFightService, FightService>();
 
 
 var app = builder.Build();
